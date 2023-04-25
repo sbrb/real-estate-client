@@ -41,6 +41,11 @@ button[type="submit"] {
     margin-left: -1rem;
 }
 
+.select_opt_child {
+    text-align: center;
+    color: black;
+}
+
 .textarea,
 .terms {
     margin-top: 1rem;

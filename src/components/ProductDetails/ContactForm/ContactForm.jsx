@@ -8,8 +8,6 @@ const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 const MyTextInput = ({ label, ...props }) => {
-  // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  // which we can spread on <input> and alse replace ErrorMessage entirely.
   const [field, meta] = useField(props);
   return (
     <>
@@ -37,7 +35,6 @@ const MyCheckbox = ({ children, ...props }) => {
   );
 };
 
-// Styled components ....
 const StyledSelect = styled.select`
   color: #2b6cb0;
 `;
@@ -60,8 +57,6 @@ const StyledLabel = styled.label`
 `;
 
 const MyTextArea = ({ label, ...props }) => {
-  // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  // which we can spread on <input> and alse replace ErrorMessage entirely.
   const [field, meta] = useField(props);
   return (
     <>
@@ -75,8 +70,6 @@ const MyTextArea = ({ label, ...props }) => {
 };
 
 const MySelect = ({ label, ...props }) => {
-  // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  // which we can spread on <input> and alse replace ErrorMessage entirely.
   const [field, meta] = useField(props);
   return (
     <>
@@ -89,7 +82,7 @@ const MySelect = ({ label, ...props }) => {
   );
 };
 
-// And now we can use these
+
 const ContactForm = () => {
   return (
     <>
@@ -99,8 +92,8 @@ const ContactForm = () => {
           phone: "",
           email: "",
           message: "",
-          acceptedTerms: false, // added for our checkbox
-          jobType: "", // added for our select
+          acceptedTerms: false, 
+          jobType: "",
         }}
         validationSchema={Yup.object({
           name: Yup.string()
@@ -116,7 +109,6 @@ const ContactForm = () => {
             .required("Required")
             .oneOf([true], "You must accept the terms and conditions."),
           jobType: Yup.string()
-            // specify the set of valid values for job type
             .oneOf(
               ["designer", "development", "product", "other"],
               "Invalid Job Type"
@@ -153,7 +145,7 @@ const ContactForm = () => {
               placeholder="Hello, I am interested in [Light and modern apartment]"
             />
             <div className="select_opt">
-              <MySelect name="jobType">
+              <MySelect name="jobType" className="select_opt_child">
                 <option value="">Select</option>
                 <option value="designer">I'm a tenant</option>
                 <option value="development">I'm a tenant</option>
@@ -164,13 +156,7 @@ const ContactForm = () => {
             <div className="terms terms_policy">
               <MyCheckbox name="acceptedTerms">
                 By submitting this form I agree
-                {/* <a
-                  className="terms_policy"
-                  target="_blank"
-                  href="https://demo02.houzez.co/terms-and-conditions/"
-                > */}
                 terms
-                {/* </a> */}
               </MyCheckbox>
             </div>
 
