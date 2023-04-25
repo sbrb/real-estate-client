@@ -1,0 +1,10 @@
+.overview_dieted {
+    margin-top: 2rem;
+}
+
+.left_overview ul {
+    margin: 15px;
+    padding: 15px;
+    width: 150px;
+    height: 60px;
+}

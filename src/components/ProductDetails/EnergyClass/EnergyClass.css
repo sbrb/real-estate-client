@@ -1,0 +1,84 @@
+
+
+.energy_class_details {
+    margin-top: 1.2rem;
+}
+
+.details_details_left span {
+    float: right;
+}
+
+.energy_class_scale {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    color: #fff;
+    text-align: center;
+}
+
+.energy_class_scale_aa,
+.energy_class_scale_a,
+.energy_class_scale_b,
+.energy_class_scale_c,
+.energy_class_scale_d,
+.energy_class_scale_e,
+.energy_class_scale_f,
+.energy_class_scale_g,
+.energy_class_scale_h {
+    padding-top: .3rem;
+}
+
+.energy_class_scale_aa {
+    width: 70px;
+    height: 27px;
+    background-color: #33A357;
+}
+
+.energy_class_scale_a {
+    width: 70px;
+    height: 27px;
+    background-color: #79B752;
+}
+
+.energy_class_scale_b {
+    width: 70px;
+    height: 27px;
+    background-color: #C3D545;
+}
+
+.energy_class_scale_c {
+    width: 70px;
+    height: 27px;
+    background-color: #FFF12C;
+    color: #000;
+}
+
+.energy_class_scale_d {
+    width: 70px;
+    height: 27px;
+    background-color: #f8c74a;
+}
+
+.energy_class_scale_e {
+    width: 70px;
+    height: 27px;
+    background-color: #f59658;
+}
+
+.energy_class_scale_f {
+    width: 70px;
+    height: 27px;
+    background-color: #fa777b;
+}
+
+.energy_class_scale_g {
+    width: 70px;
+    height: 27px;
+    background-color: #f94a4f;
+}
+
+.energy_class_scale_h {
+    width: 70px;
+    height: 27px;
+    background-color:#ff0008;
+}
