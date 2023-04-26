@@ -3,7 +3,7 @@ import ProductDetails from "./Pages/ProductDetails";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <ProductDetails />
     </div>
   );

@@ -1,4 +1,3 @@
-import "./Features.css";
 import { CheckCircleOutline } from "@mui/icons-material";
 
 function Features() {
@@ -28,9 +27,7 @@ function Features() {
             <CheckCircleOutline />
             <span>Laundry</span>
           </div>
-        </div>
 
-        <div className="features_des_2">
           <div>
             <CheckCircleOutline />
             <span>Lawn</span>
@@ -43,6 +40,9 @@ function Features() {
             <CheckCircleOutline />
             <span>Outdoor Shower</span>
           </div>
+        </div>
+
+        <div className="features_des_2">
           <div>
             <CheckCircleOutline />
             <span>Refrigerator</span>
@@ -51,9 +51,7 @@ function Features() {
             <CheckCircleOutline />
             <span>Sauna</span>
           </div>
-        </div>
 
-        <div className="features_des_3">
           <div>
             <CheckCircleOutline />
             <span>Swimming Pool</span>
@@ -70,6 +68,10 @@ function Features() {
           <div>
             <CheckCircleOutline />
             <span>WiFi</span>
+          </div>
+          <div>
+            <CheckCircleOutline />
+            <span>Window Coverings</span>
           </div>
           <div>
             <CheckCircleOutline />

@@ -1,5 +1,3 @@
-import "./Description.css";
-
 function Description() {
   return (
     <div className="description container">

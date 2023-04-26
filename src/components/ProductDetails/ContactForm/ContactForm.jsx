@@ -4,8 +4,9 @@ import * as Yup from "yup";
 import styled from "@emotion/styled";
 import "./ContactForm.css";
 
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const nameRegExp = /^[A-Z a-z]{2,}$/;
+const phoneRegExp = /^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$/;
+const emailRegExp = /^([a-zA-Z0-9_.]+@[a-z]+\.[a-z]{2,3})?$/;
 
 const MyTextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props);
@@ -42,7 +43,7 @@ const StyledSelect = styled.select`
 const StyledErrorMessage = styled.div`
   font-size: 12px;
   color: #e53e3e;
-  width: 300px;
+  width: 87%;
   margin-top: 0rem;
   &:before {
     font-size: 10px;
@@ -73,7 +74,7 @@ const MySelect = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <>
-      <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
+      <div htmlFor={props.id || props.name}>{label}</div>
       <StyledSelect {...field} {...props} />
       {meta.touched && meta.error ? (
         <StyledErrorMessage>{meta.error}</StyledErrorMessage>
@@ -81,7 +82,6 @@ const MySelect = ({ label, ...props }) => {
     </>
   );
 };
-
 
 const ContactForm = () => {
   return (
@@ -92,28 +92,31 @@ const ContactForm = () => {
           phone: "",
           email: "",
           message: "",
-          acceptedTerms: false, 
+          acceptedTerms: false,
           jobType: "",
         }}
         validationSchema={Yup.object({
           name: Yup.string()
-            .max(35, "Must be 20 characters or less")
-            .required("Name is required"),
+            .max(36, "Must be 36 characters or less.")
+            .matches(nameRegExp, "Name is not valid.")
+            .required("Name is required."),
           phone: Yup.string()
-            .matches(phoneRegExp, "Phone number is not valid")
-            .required("Phone is required"),
+            .matches(phoneRegExp, "Phone number is not valid.")
+            .required("Phone is required."),
           email: Yup.string()
-            .email("Invalid email address")
-            .required("Email is required"),
-          acceptedTerms: Yup.boolean()
-            .required("Required")
-            .oneOf([true], "You must accept the terms and conditions."),
+            .email("Use '@'")
+            .matches(emailRegExp, "Email is not valid.")
+            .required("Email is required."),
+          // message: Yup.string()
+          //   .max(300, "Must be 300 characters or less.")
+          //   .required("Massage is required."),
+          acceptedTerms: Yup.boolean().oneOf(
+            [true],
+            "You must accept the terms & conditions."
+          ),
           jobType: Yup.string()
-            .oneOf(
-              ["designer", "development", "product", "other"],
-              "Invalid Job Type"
-            )
-            .required("Required"),
+            .oneOf(["buyer", "tenant", "agent", "other"], "Invalid Job Type.")
+            .required("Profession is required."),
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -142,32 +145,29 @@ const ContactForm = () => {
               className="textarea"
               name="massage"
               rows="6"
-              placeholder="Hello, I am interested in [Light and modern apartment]"
+              placeholder="Type a massage..."
             />
             <div className="select_opt">
               <MySelect name="jobType" className="select_opt_child">
                 <option value="">Select</option>
-                <option value="designer">I'm a tenant</option>
-                <option value="development">I'm a tenant</option>
-                <option value="product">I'm an agent</option>
+                <option value="buyer">I'm a buyer</option>
+                <option value="tenant">I'm a tenant</option>
+                <option value="agent">I'm an agent</option>
                 <option value="other">Other</option>
               </MySelect>
             </div>
             <div className="terms terms_policy">
               <MyCheckbox name="acceptedTerms">
-                By submitting this form I agree
-                terms
+                By submitting this form I agree terms
               </MyCheckbox>
             </div>
-
             <button className="query_btn upper_query_btn" type="submit">
-              Submit
+              SEND
             </button>
-            <button className="query_btn mid_query_btn" type="submit">
+            <button className="query_btn mid_query_btn" type="">
               Call
             </button>
-
-            <button className="query_btn lower_query_btn" type="submit">
+            <button className="query_btn lower_query_btn" type="">
               WhatsApp
             </button>
           </div>
@@ -178,4 +178,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-

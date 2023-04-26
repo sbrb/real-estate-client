@@ -1,4 +1,3 @@
-import "./Overview.css";
 import {
   BedOutlined,
   CalendarMonthOutlined,
@@ -12,7 +11,7 @@ function Overview() {
     <div className="overview container">
       <div className="overview_title popery_page_title">Overview</div>
       <hr />
-      <div className="overview_dieted divide_column_end">
+      <div className="overview_detail divide_column_end">
         <ul>
           <li>
             <strong>Apartment</strong>
@@ -66,5 +65,3 @@ function Overview() {
 }
 
 export default Overview;
-
-

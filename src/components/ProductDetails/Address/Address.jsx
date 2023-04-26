@@ -1,18 +1,16 @@
-import "./Address.css";
-
 function Address() {
   return (
     <div className="address container">
       {/* upper_address */}
       <div className="upper_address divide_column_end">
         <div className="address_title popery_page_title">Address</div>
-        <button>Open on Google Maps</button>
+        <button className="address_map_button">Open Map</button>
       </div>
       <hr />
       {/* lower_address */}
-      <div className="divide_column_end">
+      <div className="lower_address divide_column_end">
         {/* left column */}
-        <div className="divide_column_half">
+        <div className="address_left divide_column_half">
           <div className="divide_column_end">
             <strong>Address</strong>
             <span>2436 SW 8th St</span>
@@ -30,7 +28,7 @@ function Address() {
           <hr />
         </div>
         {/* right column */}
-        <div className="divide_column_half">
+        <div className="address_right divide_column_half">
           <div className="divide_column_end">
             <strong>Zip/Postal Code</strong>
             <span>33140</span>

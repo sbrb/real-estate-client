@@ -1,4 +1,3 @@
-import "./Details.css";
 import { CalendarMonth } from "@mui/icons-material";
 
 function Details() {
@@ -10,7 +9,7 @@ function Details() {
           <div className="details_title_head popery_page_title">Details</div>
           <div className="details_title_date">
             <CalendarMonth className="mui_icon" />
-            Updated on January 13, 2022 at 2:36 pm
+            13 Jan, 2022 at 2:36 pm
           </div>
         </div>
         <hr />
@@ -79,9 +78,9 @@ function Details() {
           <div className="popery_page_title">Additional Details</div>
         </div>
         <hr />
-        <div className=" divide_column_end">
+        <div className="lower_details_details divide_column_end">
           {/* left column */}
-          <div className="divide_column_half">
+          <div className="lower_details_left divide_column_half">
             <div className="divide_column_end">
               <strong>Deposit:</strong>
               <span>20%</span>
@@ -99,7 +98,7 @@ function Details() {
             <hr />
           </div>
           {/* right column */}
-          <div className="divide_column_half">
+          <div className="lower_details_right divide_column_half">
             <div className="divide_column_end">
               <strong>Amenities:</strong>
               <span>Clubhouse</span>
